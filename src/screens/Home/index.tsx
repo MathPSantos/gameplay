@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "../../components/Container";
 import { Profile } from "../../components/Profile";
@@ -11,6 +12,8 @@ import { List } from "../../components/List";
 import { styles } from "./styles";
 
 export function Home() {
+  const navigation = useNavigation();
+
   const [category, setCategory] = useState("");
 
   const appointments = [
@@ -48,11 +51,19 @@ export function Home() {
     setCategory(currentId);
   }
 
+  function handleAppointmentDetails() {
+    navigation.navigate("AppointmentDetails");
+  }
+
+  function handleAppointmentCreate() {
+    navigation.navigate("AppointmentCreate");
+  }
+
   return (
     <Container>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate} />
       </View>
 
       <View>
@@ -67,7 +78,9 @@ export function Home() {
             subtitle="Total 6"
             data={appointments}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Appointment data={item} />}
+            renderItem={({ item }) => (
+              <Appointment data={item} onPress={handleAppointmentDetails} />
+            )}
           />
         </View>
       </View>
