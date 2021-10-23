@@ -10,7 +10,7 @@ import { theme } from "../../global/styles/theme";
 interface CategoryProps extends RectButtonProps {
   title: string;
   icon: React.FC<SvgProps>;
-  hasCheckBox: boolean;
+  hasCheckBox?: boolean;
   checked?: boolean;
 }
 

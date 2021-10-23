@@ -6,30 +6,62 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  banner: {
-    width: "100%",
-    height: 234,
-    marginBottom: 32,
+  label: {
+    fontSize: 18,
+    fontFamily: theme.fonts.title700,
+    color: theme.colors.heading,
   },
-  bannerContent: {
-    flex: 1,
-    justifyContent: "flex-end",
+  form: {
     paddingHorizontal: 24,
-    marginBottom: 32,
+    marginTop: 32,
   },
-  title: {
-    fontSize: 20,
-    fontFamily: theme.fonts.title700,
+  select: {
+    width: "100%",
+    height: 68,
+    flexDirection: "row",
+    borderColor: theme.colors.secondary50,
+    borderWidth: 1,
+    borderRadius: 8,
+    alignItems: "center",
+    paddingRight: 24,
+    overflow: "hidden",
+  },
+  selectContent: {
+    flex: 1,
+    alignItems: "center",
+  },
+  image: {
+    width: 64,
+    height: 68,
+    backgroundColor: theme.colors.secondary50,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: theme.colors.secondary50,
+  },
+  fields: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 32,
+  },
+  column: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 8,
+  },
+  divider: {
+    marginRight: 4,
+    fontSize: 16,
+    fontFamily: theme.fonts.text500,
     color: theme.colors.heading,
   },
-  subtitle: {
+  caractereLimit: {
+    fontFamily: theme.fonts.text400,
     fontSize: 13,
-    fontFamily: theme.fonts.title700,
-    color: theme.colors.heading,
+    color: theme.colors.highlight,
   },
   footer: {
-    paddingHorizontal: 24,
-    paddingVertical: 20,
-    marginBottom: getBottomSpace(),
+    marginVertical: 20,
+    marginBottom: 56,
   },
 });
